@@ -3,11 +3,21 @@ import { SummaryTileStyles } from './SummaryTile.styles';
 import { FontAwesome } from '@expo/vector-icons';
 import { SummaryTileConstants } from './SummaryTile.constants';
 import TextButton from '../TextButton/TextButton';
+import { useNavigation } from '@react-navigation/native';
+import { ScreenConstants } from '../../constants/ScreenConstants';
 
 export default SummaryTile = ({ type, count }) => {
 
+  const navigation = useNavigation();
+
+  const navigateTo = () => {
+    navigation.navigate(ScreenConstants.VIEW_TASKS, {
+      type
+    })
+  }
+
   return (
-    <TouchableOpacity style={SummaryTileStyles.touchableBox}>
+    <TouchableOpacity style={SummaryTileStyles.touchableBox} onPress={navigateTo}>
       <View style={SummaryTileStyles.container}>
         <View style={SummaryTileStyles.icon}>
           <FontAwesome name={SummaryTileConstants[type].Icon} size={24} color={SummaryTileConstants[type].Color}/>
