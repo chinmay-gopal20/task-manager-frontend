@@ -10,7 +10,7 @@ export default AddTaskContainer = (props) => {
 
   useEffect(() => {
     navigation.setOptions({
-      header: () => (<Header title="Add Task" onLeftButtonPress={onCancel } onRightButtonPress={onAdd }/>)
+      header: () => (<Header title="Add Task" onLeftButtonPress={onCancel } onRightButtonPress={onAdd } rightButtonType="primary" rightButtonTitle="Add"/>)
     })
   }, [])
 
