@@ -8,6 +8,9 @@ export const TextButtonStyles = StyleSheet.create({
   primary: {
     color: ColorConstants.PRIMARY,
   },
+  danger: {
+    color: ColorConstants.DANGER,
+  },
   textButton: {
     fontSize: 18,
     fontWeight: 600,

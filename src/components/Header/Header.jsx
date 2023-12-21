@@ -1,7 +1,8 @@
 import { View, Text } from 'react-native';
+import TextButton from '../TextButton/TextButton';
 import { HeaderStyles } from './Header.styles';
 
-export default Header = ({onLeftButtonPress, onRightButtonPress, title}) => {
+export default Header = ({onLeftButtonPress, onRightButtonPress, title, rightButtonTitle = "Add", rightButtonType = "Primary"}) => {
   return (
     <View style={HeaderStyles.headerContainer}>
       <Text style={HeaderStyles.headerTitle}> {title} </Text>
@@ -18,8 +19,8 @@ export default Header = ({onLeftButtonPress, onRightButtonPress, title}) => {
       {onRightButtonPress &&
         <View style={HeaderStyles.headerRight}>
           <TextButton
-            text={"Add"}
-            type='primary'
+            text={rightButtonTitle}
+            type={rightButtonType}
             onPress={() => onRightButtonPress()}
           />
         </View>

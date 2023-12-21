@@ -5,7 +5,8 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 export default DatePicker = ({
   selectedDate,
   onSelectDate,
-  onClose
+  disabled = false,
+  display = 'spinner'
 }) => {
 
   const handleDateChange = (event_, date) => {
@@ -14,12 +15,13 @@ export default DatePicker = ({
 
 return (
     <View>
-      <DateTimePicker
-        value={selectedDate}
-        mode={'date'}
-        onChange={handleDateChange}
+    <DateTimePicker
+      value={selectedDate}
+      mode={'date'}
+      onChange={handleDateChange}
       themeVariant={'dark'}
-      display='spinner'
+      display={display}
+      disabled={disabled}
       />
     </View>
   )

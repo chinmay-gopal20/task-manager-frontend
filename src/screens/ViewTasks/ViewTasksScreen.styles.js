@@ -34,4 +34,10 @@ export const ViewTasksScreenStyles = StyleSheet.create({
   danger: {
     color: ColorConstants.DANGER,
   },
+  emptyContainer: {
+    color: ColorConstants.GRAY,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  }
 })

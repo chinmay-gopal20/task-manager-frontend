@@ -46,7 +46,7 @@ export default ViewTasksScreen = ({ markAsComplete, viewTask }) => {
             : <Text style={[ViewTasksScreenStyles.subTitle, item.isOverDue && { color: ViewTasksScreenStyles.danger.color }]}>Due: {item.dueDate}</Text>
           }
         </View>
-        <FontAwesome style={{ marginLeft: 'auto' }} name="info-circle" size={24} color={ColorConstants.PRIMARY} onPress={() => viewTask(item.taskId)}/>
+        <FontAwesome style={{ marginLeft: 'auto' }} name="info-circle" size={24} color={ColorConstants.PRIMARY} onPress={() => viewTask(item.id)}/>
       </View>
     )
   }
@@ -54,12 +54,19 @@ export default ViewTasksScreen = ({ markAsComplete, viewTask }) => {
   return (
     <BackgroundView>
       <View style={ViewTasksScreenStyles.container}>
-      <FlatList
-        data={data}
-        keyExtractor={(item, index) => index}
-        renderItem={renderItem}
-        />
-        </View>
+        {
+          data.length > 0 ? (
+            <FlatList
+              data={data}
+              keyExtractor={(item, index) => index}
+              renderItem={renderItem}
+              />
+          ) : (
+              <Text style={ ViewTasksScreenStyles.emptyContainer} >No Tasks!</Text>
+          )
+        }
+
+      </View>
     </BackgroundView>
   )
 

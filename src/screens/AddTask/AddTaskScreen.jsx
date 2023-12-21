@@ -23,6 +23,7 @@ export default AddTaskScreen = forwardRef((props, ref) => {
     setDueDate(date)
   }
 
+
   return (
     <BackgroundView>
       <View style={AddTaskScreenStyles.container}>
