@@ -5,10 +5,8 @@ import Header from "../components/Header/Header";
 
 export default AddTaskContainer = (props) => {
 
-
   const { navigation } = props;
   const ref = useRef();
-
 
   useEffect(() => {
     navigation.setOptions({

@@ -21,12 +21,7 @@ export const AddTaskScreenStyles = StyleSheet.create({
     textAlign: 'auto',
   },
   descriptionInput: {
-    height: 130
-  },
-  separator: {
-    height: 1,
-    backgroundColor: ColorConstants.GRAY,
-    marginBottom: 10,
+    height: 150
   },
   inputFieldLabelContainer: {
     flexDirection: 'row',
