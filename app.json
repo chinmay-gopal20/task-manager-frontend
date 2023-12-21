@@ -4,10 +4,10 @@
     "slug": "task-manager-frontend",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/task-manager-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/task-manager-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
