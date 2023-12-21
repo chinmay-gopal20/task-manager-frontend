@@ -10,4 +10,5 @@ export const ColorConstants = {
 
   PRIMARY: '#0859D1',
   SECONDARY: '#0000cd',
+  TEXT_LABEL: '#8c8b8b',
 }

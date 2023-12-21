@@ -11,7 +11,6 @@ export default DashboardScreen = ({onPressNewTask}) => {
 
   return (
     <BackgroundView>
-
       <View style={DashboardScreenStyles.container}>
         <View style={DashboardScreenStyles.row}>
           <SummaryTile type={ReminderTypeConstants.TODAY} count={0}/>
@@ -22,7 +21,6 @@ export default DashboardScreen = ({onPressNewTask}) => {
         <SummaryTile type={ReminderTypeConstants.COMPLETED} count={0} />
         <SummaryTile type={ReminderTypeConstants.IN_COMPLETE} count={0} />
         </View>
-
       </View>
 
       <View style={DashboardScreenStyles.newTaskButton}>

@@ -18,7 +18,7 @@ export default function App() {
       <SafeAreaProvider>
         <NavigationContainer>
           <SafeAreaView style={ContainerStyles.safeArea}>
-            <Stack.Navigator initialRouteName={ScreenConstants.DASHBOARD} screenOptions={{headerShown: false}}>
+            <Stack.Navigator initialRouteName={ScreenConstants.DASHBOARD}>
               <Stack.Screen
                 name={ScreenConstants.DASHBOARD}
                 component={DashboardContainer}
