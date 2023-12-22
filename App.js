@@ -8,37 +8,40 @@ import DashboardContainer from './src/containers/DashboardContainer'
 import TaskDetailsContiner from './src/containers/TaskDetailsContainer';
 import ViewTasksContainer from './src/containers/ViewTasksContainer';
 import AddTaskContainer from './src/containers/AddTaskContainer';
+import { StoreProvider } from './src/contexts/StoreContext';
 
 export default function App() {
 
   const Stack = createNativeStackNavigator();
 
   return (
-    <RootSiblingParent>
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <SafeAreaView style={ContainerStyles.safeArea}>
-            <Stack.Navigator initialRouteName={ScreenConstants.DASHBOARD}>
-              <Stack.Screen
-                name={ScreenConstants.DASHBOARD}
-                component={DashboardContainer}
-              />
-              <Stack.Screen
-                name={ScreenConstants.TASK_DETAILS}
-                component={TaskDetailsContiner}
-              />
-              <Stack.Screen
-                name={ScreenConstants.VIEW_TASKS}
-                component={ViewTasksContainer}
-              />
-              <Stack.Screen
-                name={ScreenConstants.ADD_TASK}
-                component={AddTaskContainer}
-              />
-            </Stack.Navigator>
-          </SafeAreaView>
-        </NavigationContainer>
+    <StoreProvider>
+      <RootSiblingParent>
+        <SafeAreaProvider>
+          <NavigationContainer>
+            <SafeAreaView style={ContainerStyles.safeArea}>
+              <Stack.Navigator initialRouteName={ScreenConstants.DASHBOARD}>
+                <Stack.Screen
+                  name={ScreenConstants.DASHBOARD}
+                  component={DashboardContainer}
+                />
+                <Stack.Screen
+                  name={ScreenConstants.TASK_DETAILS}
+                  component={TaskDetailsContiner}
+                />
+                <Stack.Screen
+                  name={ScreenConstants.VIEW_TASKS}
+                  component={ViewTasksContainer}
+                />
+                <Stack.Screen
+                  name={ScreenConstants.ADD_TASK}
+                  component={AddTaskContainer}
+                />
+              </Stack.Navigator>
+            </SafeAreaView>
+          </NavigationContainer>
         </SafeAreaProvider>
     </RootSiblingParent>
+    </StoreProvider>
   );
 }

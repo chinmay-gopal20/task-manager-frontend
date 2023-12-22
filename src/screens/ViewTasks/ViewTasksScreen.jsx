@@ -4,38 +4,16 @@ import { ViewTasksScreenStyles } from './ViewTasksScreen.styles';
 import BackgroundView from '../../components/BackgroundView/BackgroundView';
 import { FontAwesome } from '@expo/vector-icons';
 import { ColorConstants } from '../../constants/ColorConstants';
+import {observer} from 'mobx-react-lite'
+import { useStoreContext } from '../../contexts/StoreContext';
 
-export default ViewTasksScreen = ({ markAsComplete, viewTask }) => {
-  const data = [
-    {
-      id: 1,
-      title: 'Title A',
-      dueDate: '22-12-2023',
-      completedDate: '21-12-2023',
-      isOverDue: false
-    },
-    {
-      id: 2,
-      title: 'Title B',
-      dueDate: '21-13-2023',
-      isOverDue: true
-    },
-    {
-      id: 3,
-      title: 'Task C',
-      dueDate: '21-14-2023',
-      isOverDue: false
-    },
-    {
-      id: 4,
-      title: 'Task D',
-      dueDate: '21-15-2023',
-      completedDate: '21-15-2023',
-      isOverDue: false
-    }
-  ]
+const ViewTasksScreen = ({ markAsComplete, viewTask, type }) => {
 
-  const renderItem = ({item}) => {
+  const { taskStore } = useStoreContext();
+
+  const data = taskStore.getAllTasks(type);
+
+  const renderItem = ({ item }) => {
     return (
       <View style={ViewTasksScreenStyles.itemContainer}>
         <CheckBox style={{borderRadius: 10}} value={item.completedDate} onValueChange={() => markAsComplete(item.id)} disabled={item.completedDate}/>
@@ -71,3 +49,5 @@ export default ViewTasksScreen = ({ markAsComplete, viewTask }) => {
   )
 
 }
+
+export default observer(ViewTasksScreen)

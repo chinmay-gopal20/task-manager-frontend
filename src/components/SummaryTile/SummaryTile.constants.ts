@@ -14,7 +14,7 @@ export const SummaryTileConstants = {
   },
   [ReminderTypeConstants.IN_COMPLETE]: {
     Icon: 'calendar-times-o',
-    Text: 'In Completed',
+    Text: 'In Complete',
     Color: ColorConstants.MEDIUM_BLUE
   },
   [ReminderTypeConstants.TODAY]: {

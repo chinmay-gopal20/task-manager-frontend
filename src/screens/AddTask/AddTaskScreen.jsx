@@ -17,6 +17,11 @@ export default AddTaskScreen = forwardRef((props, ref) => {
       description,
       dueDate: moment(dueDate).format('DD-MM-YYYY'),
     }),
+    reset: () => {
+      setTitle('');
+      setDescription('')
+      setDueDate(new Date())
+    }
   }));
 
   const onDateChange = (date) => {

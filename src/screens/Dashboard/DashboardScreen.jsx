@@ -6,20 +6,24 @@ import { DashboardScreenStyles } from "./DashboardScreen.styles"
 import SummaryTile from "../../components/SummaryTile/SummaryTile"
 import { ReminderTypeConstants } from "../../constants/ReminderTypeConstants"
 import { DashboardScreenConstants } from "./DashboardScreen.constants"
+import { observer } from 'mobx-react-lite';
+import { useStoreContext } from "../../contexts/StoreContext"
 
-export default DashboardScreen = ({onPressNewTask}) => {
+const DashboardScreen = ({onPressNewTask}) => {
+
+  const { taskStore } = useStoreContext();
 
   return (
     <BackgroundView>
       <View style={DashboardScreenStyles.container}>
         <View style={DashboardScreenStyles.row}>
-          <SummaryTile type={ReminderTypeConstants.TODAY} count={0}/>
-          <SummaryTile type={ReminderTypeConstants.ALL} count={0} />
+          <SummaryTile type={ReminderTypeConstants.TODAY} count={taskStore.counts[ReminderTypeConstants.TODAY]}/>
+          <SummaryTile type={ReminderTypeConstants.ALL} count={taskStore.counts[ReminderTypeConstants.ALL]} />
         </View>
 
         <View style={DashboardScreenStyles.row}>
-        <SummaryTile type={ReminderTypeConstants.COMPLETED} count={0} />
-        <SummaryTile type={ReminderTypeConstants.IN_COMPLETE} count={0} />
+        <SummaryTile type={ReminderTypeConstants.COMPLETED} count={taskStore.counts[ReminderTypeConstants.COMPLETED]} />
+        <SummaryTile type={ReminderTypeConstants.IN_COMPLETE} count={taskStore.counts[ReminderTypeConstants.IN_COMPLETE]} />
         </View>
       </View>
 
@@ -34,3 +38,5 @@ export default DashboardScreen = ({onPressNewTask}) => {
     </BackgroundView>
   )
 }
+
+export default observer(DashboardScreen);
