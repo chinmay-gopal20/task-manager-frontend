@@ -3,12 +3,18 @@ import { ColorConstants } from '../../constants/ColorConstants';
 
 export const SummaryTileStyles = StyleSheet.create({
   touchableBox: {
+    width: '50%',
+    overflow: 'hidden',
+    marginRight: 10,
+  },
+  shadowContainer: {
     borderRadius: 8,
-    borderWidth: 1,
+    shadowColor: ColorConstants.GRAY,
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.5,
+    backgroundColor: ColorConstants.WHITE,
     padding: 10,
     margin: 5,
-    backgroundColor: ColorConstants.DARK_GRAY,
-    width: '50%',
   },
   container: {
     flexDirection: 'row',
@@ -16,10 +22,9 @@ export const SummaryTileStyles = StyleSheet.create({
     padding: 5
   },
   count: {
-    marginRight: 10,
-    fontSize: 30,
+    fontSize: 35,
     fontWeight: 'bold',
-    color: ColorConstants.WHITE,
+    color: ColorConstants.VIOLET,
     textAlign: 'right',
     flex: 1,
   },
@@ -31,8 +36,8 @@ export const SummaryTileStyles = StyleSheet.create({
     marginRight: 10,
   },
   text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: ColorConstants.LIGHT_GRAY,
+    fontSize: 16,
+    fontWeight: '500',
+    color: ColorConstants.BLACK,
   },
 });

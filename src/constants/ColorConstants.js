@@ -7,6 +7,7 @@ export const ColorConstants = {
   DARK_GRAY: '#a9a9a9',
   LIGHT_GRAY: '#dcdcdc',
   MEDIUM_BLUE: '#0000cd',
+  VIOLET: '#BA55D3',
 
   PRIMARY: '#0859D1',
   SECONDARY: '#0000cd',

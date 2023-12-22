@@ -3,12 +3,17 @@ import { StyleSheet } from 'react-native';
 
 export const HeaderStyles =  StyleSheet.create({
   headerContainer: {
-    backgroundColor: ColorConstants.BLACK,
     justifyContent: 'center',
     paddingVertical: 15,
     borderBottomWidth: 0.2,
     borderBottomColor: ColorConstants.GRAY,
     flexDirection: 'row',
+  },
+  dark: {
+    backgroundColor: ColorConstants.APP_BACKGROUND,
+  },
+  light: {
+    backgroundColor: ColorConstants.WHITE,
   },
   headerTitleContainer: {
     gap: 5,

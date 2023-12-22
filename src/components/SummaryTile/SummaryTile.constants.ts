@@ -3,22 +3,22 @@ import { ReminderTypeConstants } from "../../constants/ReminderTypeConstants";
 
 export const SummaryTileConstants = {
   [ReminderTypeConstants.ALL]: {
-    Icon: 'calendar',
+    Icon: require('../../../assets/calendar-lines.svg'),
     Text: 'All',
     Color: ColorConstants.MEDIUM_BLUE
   },
   [ReminderTypeConstants.COMPLETED]: {
-    Icon: 'calendar-check-o',
+    Icon: require('../../../assets/calendar-check.svg'),
     Text: 'Completed',
     Color: ColorConstants.MEDIUM_BLUE
   },
   [ReminderTypeConstants.IN_COMPLETE]: {
-    Icon: 'calendar-times-o',
+    Icon: require('../../../assets/calendar-xmark.svg'),
     Text: 'In Complete',
     Color: ColorConstants.MEDIUM_BLUE
   },
   [ReminderTypeConstants.TODAY]: {
-    Icon: 'clock-o',
+    Icon: require('../../../assets/clock-three.svg'),
     Text: 'Today',
     Color: ColorConstants.MEDIUM_BLUE
   }

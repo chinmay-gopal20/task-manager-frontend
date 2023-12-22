@@ -11,11 +11,11 @@ export default DashboardContainer = (props) => {
 
   useEffect(() => {
     navigation.setOptions({
-      header: () => <Header title="Your Tasks"/>
+      header: () => <Header title="Dashboard"/>
     })
   }, [])
 
-  addTask = () => {
+  const addTask = () => {
     navigation.navigate(ScreenConstants.ADD_TASK);
   }
 

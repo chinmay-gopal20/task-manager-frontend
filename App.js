@@ -9,6 +9,7 @@ import TaskDetailsContiner from './src/containers/TaskDetailsContainer';
 import ViewTasksContainer from './src/containers/ViewTasksContainer';
 import AddTaskContainer from './src/containers/AddTaskContainer';
 import { StoreProvider } from './src/contexts/StoreContext';
+import { DashboardTopNavigators } from './src/navigators/DashboardNavigators';
 
 export default function App() {
 
@@ -23,7 +24,7 @@ export default function App() {
               <Stack.Navigator initialRouteName={ScreenConstants.DASHBOARD}>
                 <Stack.Screen
                   name={ScreenConstants.DASHBOARD}
-                  component={DashboardContainer}
+                  component={DashboardTopNavigators}
                 />
                 <Stack.Screen
                   name={ScreenConstants.TASK_DETAILS}

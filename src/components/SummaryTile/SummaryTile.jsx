@@ -5,6 +5,7 @@ import { SummaryTileConstants } from './SummaryTile.constants';
 import TextButton from '../TextButton/TextButton';
 import { useNavigation } from '@react-navigation/native';
 import { ScreenConstants } from '../../constants/ScreenConstants';
+import { Image} from 'expo-image';
 
 export default SummaryTile = ({ type, count }) => {
 
@@ -18,9 +19,10 @@ export default SummaryTile = ({ type, count }) => {
 
   return (
     <TouchableOpacity style={SummaryTileStyles.touchableBox} onPress={navigateTo}>
+      <View style={SummaryTileStyles.shadowContainer}>
       <View style={SummaryTileStyles.container}>
         <View style={SummaryTileStyles.icon}>
-          <FontAwesome name={SummaryTileConstants[type].Icon} size={24} color={SummaryTileConstants[type].Color}/>
+            <Image source={SummaryTileConstants[type].Icon}  style={{width: 25, height: 25}}/>
         </View>
         <View style={SummaryTileStyles.countContainer }>
           <Text style={SummaryTileStyles.count}>{count}</Text>
@@ -28,7 +30,8 @@ export default SummaryTile = ({ type, count }) => {
       </View>
       <View style={SummaryTileStyles.container}>
         <Text style={SummaryTileStyles.text}>{SummaryTileConstants[type].Text}</Text>
-      </View>
+        </View>
+        </View>
     </TouchableOpacity>
   )
 }
